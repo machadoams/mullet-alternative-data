@@ -4,7 +4,11 @@
 
 **Alexandre M. S. Machado**: alexandre.marcel@posgrad.ufsc.br       
 
+<<<<<<< HEAD
 *Laboratório de Mamíferos Aquáticos, Universidade Federal de Santa Catarina, CCB/ECZ, Florianópolis, SC 88010-970, Brazil.*      
+=======
+*Laboratório de Mamíferos Aquáticos, Universidade Federal de Santa Catarina, CCB/ECZ, Florianópolis, SC 88010-970, Brazil.*
+>>>>>>> d7eb7843e382271edb2d6632e55c6678e110e4c0
 *Department of Collective Behaviour, Max Planck Institute of Animal Behaviour, Konstanz, Germany*
 
 
