@@ -12,6 +12,11 @@
 gPairs <- list()  
 rlabs <- list()
 
+# create dataframe with year and catch data
+tmpData <- dataMullet %>% 
+  dplyr::filter(year %in% presYear) %>% 
+  dplyr::select('Media reports', 'Self-reporting', 'Industrial fleet', 'Beach seiner community', 'year') 
+
 for(i in 1:length(tmpx)){
   
   # subset collumns to plot
@@ -41,20 +46,27 @@ for(i in 1:length(tmpx)){
   # name list according to subset
   names(rlabs)[[i]] <- paste0(tmp.v1,"-", tmp.v2)
   
-  
-  # create dataframe to pass to ggplot2
-  tmp.df <- data.frame(dfCor[, tmp.v1],
-                       dfCor[, tmp.v2])
+  # subset dataframe to pass to ggplot2
+  tmp.df <- data.frame(tmp.v1 = tmpData[, tmp.v1],
+                       tmp.v2 = tmpData[, tmp.v2],
+                       year = tmpData$year)
   
   # create a list to receive plots
-  gPairs[[i]] <- ggplot(data = tmp.df,
-                        aes_string(x = tmp.df$dfCor...tmp.v1.,
-                                   y = tmp.df$dfCor...tmp.v2.)) +
+  gPairs[[i]] <- ggplot(data = tmp.df, 
+                        aes(x = tmp.v1, y = tmp.v2, label = year)) +
+    # add line connecting observations 
+    geom_path(linetype = 2, size = 0.25) +
+    # add trending line
     geom_smooth(method = "lm", se = FALSE, colour = col.beta) +
+    # add points
     geom_point(color = col.point, size = 2) +
+    # add text with stats
     annotate("text", fontface = "plain", label = rlabs[[i]],
-             x = 0.75 * (max(tmp.df$dfCor...tmp.v1.)),
-             y = 0.15 * (max(tmp.df$dfCor...tmp.v2.))) +
+             x = 0.75 * (max(tmp.df$tmp.v1)),
+             y = 0.15 * (max(tmp.df$tmp.v2))) +
+    # add labels with years
+    geom_text_repel(direction = 'both', colour = col.point, size = 2.5) +
+    # chage plot aesthetics
     scale_y_continuous(breaks = scales::pretty_breaks(n = 3), limits = c(0, NA)) +
     scale_x_continuous(breaks = scales::pretty_breaks(n = 3), limits = c(0, NA)) +
     labs(x = tmp.v1, y = tmp.v2) +
@@ -65,20 +77,20 @@ for(i in 1:length(tmpx)){
       panel.border = element_rect(colour = "black", fill = NA),
       panel.background = element_rect(fill = NA),
       panel.grid = element_blank(),
-      legend.position = "none"
+      legend.position = "none",
+      aspect.ratio = 1,
+      panel.spacing = unit(0,"null")
       ) 
   
   if(names(rlabs)[[i]] %in% no.xaxis){
-    gPairs[[i]] <- 
-      gPairs[[i]] + 
+    gPairs[[i]] <- gPairs[[i]] + 
       theme(axis.text.x = element_blank(),
             axis.title.x = element_blank(),
             plot.margin = margin(t = 0.2, b = 0.2))
   }
   
   if(names(rlabs)[[i]] %in% no.yaxis){
-    gPairs[[i]] <- 
-      gPairs[[i]] + 
+    gPairs[[i]] <- gPairs[[i]] + 
       theme(axis.text.y = element_blank(),
             axis.title.y = element_blank(),
             plot.margin = margin(b = 0.2, l = 0.2))
@@ -88,7 +100,6 @@ for(i in 1:length(tmpx)){
   names(gPairs)[[i]] <- paste0(tmp.v1,"-", tmp.v2)
   
 }
-
 
 # Combine panels ----
 plotCorYield <- cowplot::plot_grid(
