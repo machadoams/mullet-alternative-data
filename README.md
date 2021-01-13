@@ -18,33 +18,46 @@ Machado, AMS; Giehl, ELH; Fernandes, LP; Ingram, SN; Daura-Jorge, FG. *in prep*.
 R code is available to reproduce the analyses and figures. We used the following software and associated packages:
 
 ```
-R version 3.6.0 (2019-04-26)
-Platform: x86_64-w64-mingw32/x64 (64-bit)
-Running under: Windows 10 x64 (build 18362)
+R version 4.0.3 (2020-10-10)
+Platform: x86_64-apple-darwin17.0 (64-bit)
+Running under: macOS Big Sur 10.16
 
 Matrix products: default
+LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
 
 locale:
-[1] LC_COLLATE=Portuguese_Brazil.1252  LC_CTYPE=Portuguese_Brazil.1252    LC_MONETARY=Portuguese_Brazil.1252 LC_NUMERIC=C                      
-[5] LC_TIME=Portuguese_Brazil.1252    
+[1] pt_BR.UTF-8/pt_BR.UTF-8/pt_BR.UTF-8/C/pt_BR.UTF-8/pt_BR.UTF-8
 
 attached base packages:
 [1] grid      stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] see_0.4.0           RColorBrewer_1.1-2  raster_3.1-5        ncdf4_1.16.1        rerddap_0.6.5       ggsn_0.5.0          rgdal_1.5-10        sp_1.4-2           
- [9] bsts_0.9.1          xts_0.11-2          BoomSpikeSlab_1.1.1 Boom_0.9.1          MASS_7.3-51.4       zoo_1.8-6           cowplot_0.9.99      corrplot_0.84      
-[17] forcats_0.4.0       stringr_1.4.0       dplyr_0.8.5         purrr_0.3.2         readr_1.3.1         tidyr_0.8.3         tibble_2.1.2        ggplot2_3.2.0      
-[25] tidyverse_1.2.1    
+ [1] ggrepel_0.8.2       see_0.6.0           RColorBrewer_1.1-2  raster_3.4-5        ncdf4_1.17         
+ [6] rerddap_0.7.0       ggsn_0.5.0          rgdal_1.5-18        sp_1.4-4            bsts_0.9.5         
+[11] xts_0.12.1          BoomSpikeSlab_1.2.3 Boom_0.9.6          MASS_7.3-53         zoo_1.8-8          
+[16] cowplot_1.1.0       corrplot_0.84       forcats_0.5.0       stringr_1.4.0       dplyr_1.0.2        
+[21] purrr_0.3.4         readr_1.4.0         tidyr_1.1.2         tibble_3.0.4        ggplot2_3.3.2      
+[26] tidyverse_1.3.0    
 
 loaded via a namespace (and not attached):
- [1] httr_1.4.0         jsonlite_1.6       modelr_0.1.4       assertthat_0.2.1   cellranger_1.1.0   bayestestR_0.5.2   pillar_1.4.1       backports_1.1.5   
- [9] lattice_0.20-38    glue_1.3.1         digest_0.6.25      rvest_0.3.4        colorspace_1.4-1   plyr_1.8.6         pkgconfig_2.0.2    httpcode_0.2.0    
-[17] broom_0.5.2        haven_2.1.0        scales_1.0.0       jpeg_0.1-8         ggmap_3.0.0        generics_0.0.2     withr_2.1.2        lazyeval_0.2.2    
-[25] cli_2.0.2          effectsize_0.2.0   magrittr_1.5       crayon_1.3.4       readxl_1.3.1       maptools_0.9-5     fansi_0.4.0        nlme_3.1-139      
-[33] xml2_1.2.0         foreign_0.8-71     class_7.3-15       tools_3.6.0        data.table_1.12.2  hms_0.4.2          RgoogleMaps_1.4.3  munsell_0.5.0     
-[41] packrat_0.5.0      compiler_3.6.0     e1071_1.7-2        rlang_0.4.5        ggridges_0.5.2     classInt_0.3-3     units_0.6-3        parameters_0.5.0  
-[49] rstudioapi_0.10    rjson_0.2.20       rappdirs_0.3.1     igraph_1.2.4.1     bitops_1.0-6       codetools_0.2-16   gtable_0.3.0       DBI_1.0.0         
-[57] curl_3.3           reshape2_1.4.3     R6_2.4.0           gridExtra_2.3      lubridate_1.7.4    insight_0.8.1      KernSmooth_2.23-15 hoardr_0.5.2      
-[65] stringi_1.4.3      crul_0.7.4         Rcpp_1.0.4         sf_0.7-4           png_0.1-7          tidyselect_0.2.5 
+ [1] bitops_1.0-6         fs_1.5.0             sf_0.9-6             lubridate_1.7.9.9001
+ [5] insight_0.11.0.1     httr_1.4.2           tools_4.0.3          backports_1.2.0     
+ [9] R6_2.5.0             KernSmooth_2.23-17   DBI_1.1.0            colorspace_2.0-0    
+[13] withr_2.3.0          tidyselect_1.1.0     curl_4.3             compiler_4.0.3      
+[17] cli_2.2.0            rvest_0.3.6          xml2_1.3.2           labeling_0.4.2      
+[21] bayestestR_0.7.5.1   scales_1.1.1         checkmate_2.0.0      classInt_0.4-3      
+[25] metR_0.8.0           ggridges_0.5.2       rappdirs_0.3.1       digest_0.6.27       
+[29] foreign_0.8-80       jpeg_0.1-8.1         pkgconfig_2.0.3      dbplyr_2.0.0        
+[33] rlang_0.4.9          readxl_1.3.1         rstudioapi_0.13      httpcode_0.3.0      
+[37] farver_2.0.3         generics_0.1.0       jsonlite_1.7.2       magrittr_2.0.1      
+[41] parameters_0.10.0    Rcpp_1.0.5           munsell_0.5.0        fansi_0.4.1         
+[45] lifecycle_0.2.0      stringi_1.5.3        plyr_1.8.6           maptools_1.0-2      
+[49] crayon_1.3.4         lattice_0.20-41      haven_2.3.1          hms_0.5.3           
+[53] pillar_1.4.7         rjson_0.2.20         effectsize_0.4.0.001 codetools_0.2-16    
+[57] reshape2_1.4.4       crul_1.0.0           reprex_0.3.0         glue_1.4.2          
+[61] hoardr_0.5.2         data.table_1.13.2    modelr_0.1.8         png_0.1-7           
+[65] vctrs_0.3.6          RgoogleMaps_1.4.5.3  cellranger_1.1.0     gtable_0.3.0        
+[69] assertthat_0.2.1     xfun_0.19            broom_0.7.2          e1071_1.7-4         
+[73] class_7.3-17         tinytex_0.27         units_0.6-7          ggmap_3.0.0         
+[77] ellipsis_0.3.1
 ```
