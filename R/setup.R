@@ -13,6 +13,8 @@ if(!require(ncdf4)){install.packages("ncdf4")};library(ncdf4)
 if(!require(raster)){install.packages("raster")};library(raster)
 if(!require(RColorBrewer)){install.packages("RColorBrewer")};library(RColorBrewer)
 if(!require(see)){install.packages("see")};library(see)
+if(!require(ggrepel)){install.packages("ggrepel")};library(ggrepel)
+
 
 #### 2. Custom functions ####
 
