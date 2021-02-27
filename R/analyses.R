@@ -237,7 +237,7 @@ sst.test <- dplyr::left_join(sst.test, industrial.cpue)
 
 predfa.arx.self_reporting <- predict(fitfa.arx.self_reporting, 
                              newdata = sst.test, 
-                             horizon = 4, burn = burnin, quantiles = c(.05, .95))
+                             horizon = 4, burn = burnin, quantiles = c(.025, .975))
 
 plot(predfa.arx.self_reporting, xlab="Year", ylab="Yield", ylim=c(400, 3500))
 lines(with(subset(df_self_reporting, year >= cut.year),
@@ -334,7 +334,7 @@ sst.test <- dplyr::left_join(sst.test, industrial.cpue)
 
 predfa.arx.media_reports <- predict(fitfa.arx.media_reports, 
                                 newdata = sst.test, 
-                                horizon = 4, burn = burnin, quantiles = c(.05, .95))
+                                horizon = 4, burn = burnin, quantiles = c(.025, .975))
 
 plot(predfa.arx.media_reports, xlab="Year", ylab="Yield")
 lines(with(subset(df_media_reports, year >= cut.year),
@@ -433,7 +433,7 @@ sst.test <- dplyr::left_join(sst.test, industrial.cpue)
 
 predfa.arx.beach_seiners <- predict(fitfa.arx.beach_seiners, 
                                    newdata = sst.test, 
-                                   horizon = 4, burn = burnin, quantiles = c(.05, .95))
+                                   horizon = 4, burn = burnin, quantiles = c(.025, .975))
 
 plot(predfa.arx.beach_seiners, xlab="Year", ylab="Yield")
 lines(with(subset(df_beach_seiners, year >= cut.year),
@@ -446,13 +446,13 @@ points(with(df_beach_seiners,
 bsts.pred.models <- list(
   "Self-reporting" = predict(fitfa.arx.self_reporting, 
                      newdata = sst.test, 
-                     horizon = 4, burn = burnin, quantiles = c(.05, .95)),
+                     horizon = 4, burn = burnin, quantiles = c(.025, .975)),
   
   "Media reports" = predict(fitfa.arx.media_reports, 
                         newdata = sst.test, 
-                        horizon = 4, burn = burnin, quantiles = c(.05, .95)),
+                        horizon = 4, burn = burnin, quantiles = c(.025, .975)),
   
   "Beach seiner community" = predict(fitfa.arx.beach_seiners, 
                            newdata = sst.test, 
-                           horizon = 4, burn = burnin, quantiles = c(.05, .95)))
+                           horizon = 4, burn = burnin, quantiles = c(.025, .975)))
 

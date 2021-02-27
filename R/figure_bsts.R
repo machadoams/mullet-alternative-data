@@ -73,7 +73,7 @@ for(i in names(colMullet)){
     
   } else {
     
-    tmp <- max(bsts.pred.models[[i]]$interval["95%",]) 
+    tmp <- max(bsts.pred.models[[i]]$interval["97.5%",]) 
     if(tmp > 1000)
       tmp.round <- 1000
     if(tmp < 1000)
@@ -85,7 +85,7 @@ for(i in names(colMullet)){
     
     ymax[i] <- roundUp((max(c(max(subCatch[[i]]$FishCaughtTon), 
                              max(postCatch[[i]]$FishCaughtTon),
-                             max(bsts.pred.models[[i]]$interval["95%",])))),
+                             max(bsts.pred.models[[i]]$interval["97.5%",])))),
                         to = tmp.round)
     
   }
@@ -243,5 +243,5 @@ plotYearYield <- cowplot::plot_grid(
 
 # export pdf
 ggsave2(plot = plotYearYield,
-        file = "./figures/Fig3_yield_bsts.pdf",
+        file = "./figures/Fig3_yield_bsts_r2.pdf",
         height = 11, width = 6.5)

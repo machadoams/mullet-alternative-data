@@ -85,6 +85,6 @@ plot_bstsCumulError <- lapply(list("Self Reporting" = listBSTS_SelfReporting,
         legend.key = element_blank())
 
 # export
-ggsave(filename = "./figures/bsts_cumulative_errors.pdf",
+ggsave(filename = "./figures/bsts_cumulative_errors_r2.pdf",
        plot = plot_bstsCumulError,
        units = "mm", width = 150, height = 120)
