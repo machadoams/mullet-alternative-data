@@ -243,5 +243,5 @@ plotYearYield <- cowplot::plot_grid(
 
 # export pdf
 ggsave2(plot = plotYearYield,
-        file = "./figures/Fig3_yield_bsts_r2.pdf",
+        file = "./figures/Fig4_yield_bsts_r2.pdf",
         height = 11, width = 6.5)
