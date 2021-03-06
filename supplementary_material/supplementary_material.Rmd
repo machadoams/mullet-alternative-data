@@ -229,11 +229,11 @@ reshape2::melt(distribution_pred_media_arx) %>%
 
 \newpage
 
-# Beach seiner community
+# Beach seine fishing community
 
 ## Components of the best model
 
-```{r beachseiner_components, fig.width=6.5, fig.height=4, fig.cap = "Components of state for the beach seiner community catch data."}
+```{r beachseiner_components, fig.width=6.5, fig.height=4, fig.cap = "Components of state for the beach seine fishing community catch data."}
 plot(fitfa.arx.beach_seiners, "components")
 ```
 
@@ -241,7 +241,7 @@ plot(fitfa.arx.beach_seiners, "components")
 
 ## Checking the best model
 
-```{r beachseiner_model, fig.width=6.5, fig.height=6.5,fig.cap = "Plots of the state contribution to the mean (States, top left panel), the posterior distribution of the residuals (Residuals, top right panel), a time series plot showing the most likely predictor (bottom left panel), and the posterior inclusion probabilities for the predictors of a beach seiner community catch data (Coefficients, bottom right panel)."}
+```{r beachseiner_model, fig.width=6.5, fig.height=6.5,fig.cap = "Plots of the state contribution to the mean (States, top left panel), the posterior distribution of the residuals (Residuals, top right panel), a time series plot showing the most likely predictor (bottom left panel), and the posterior inclusion probabilities for the predictors of a beach seine fishing community catch data (Coefficients, bottom right panel)."}
 par(mfrow = c(2,2))
 plot(fitfa.arx.beach_seiners, main = "States")
 plot(fitfa.arx.beach_seiners, "residuals", main = "Residuals")
@@ -279,7 +279,7 @@ knitr::kable(tab_pred_bs_arx,
 
 ## Checking the posterior distribution
 
-```{r, fig.width=6.5, fig.height=6.5, fig.cap="Full posterior distribution of the selected model using catch data from a beach seiner community. For each year, blue dashed lines show the 95% credible interval, the black dashed line show the predicted mean and red line show the observed catches."}
+```{r, fig.width=6.5, fig.height=6.5, fig.cap="Full posterior distribution of the selected model using catch data from a beach seine fishing community. For each year, blue dashed lines show the 95% credible interval, the black dashed line show the predicted mean and red line show the observed catches."}
 # get the posterior distribution
 distribution_pred_bs_arx <- bsts.pred.models$`Beach seiner community`$distribution
 colnames(distribution_pred_bs_arx) <- df_beach_seiners[df_beach_seiners$year > 2012, 'year']
