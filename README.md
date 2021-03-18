@@ -10,8 +10,9 @@
 
 ## Description
 
-This repository includes the R scripts to reproduce the analyses and plot the figures of the manuscript:
-Machado, AMS; Giehl, ELH; Fernandes, LP; Ingram, SN; Daura-Jorge, FG. *in prep*. Alternative data sources can fill the gaps in data-poor fisheries.      
+This repository includes the R scripts to reproduce the analyses and plot the figures of the manuscript:     
+
+Machado, AMS; Giehl, ELH; Fernandes, LP; Ingram, SN; Daura-Jorge, FG. *ICES Journal of Marine Science*. Alternative data sources can fill the gaps in data-poor fisheries.      
 
 ### Note on figures and supplementary material
 Figures were saved as vectorial files and edited in Inkscape for fine-tuning and fixing typos in the 'beach seine community' labels. The supplementary material can be reproduced by knitting the rmarkdown file *supplementary_material.Rmd* located in the folder *supplementary_material*.
