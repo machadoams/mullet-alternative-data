@@ -12,10 +12,23 @@
 
 This repository includes the R scripts to reproduce the analyses and plot the figures of the manuscript:     
 
-Machado, AMS; Giehl, ELH; Fernandes, LP; Ingram, SN; Daura-Jorge, FG. *ICES Journal of Marine Science*. Alternative data sources can fill the gaps in data-poor fisheries.      
+Machado, AMS; Giehl, ELH; Fernandes, LP; Ingram, SN; Daura-Jorge, FG. 2021. Alternative data sources can fill the gaps in data-poor fisheries. ICES Journal of Marine Science.     
 
 ### Note on figures and supplementary material
-Figures were saved as vectorial files and edited in Inkscape for fine-tuning and fixing typos in the 'beach seine community' labels. The supplementary material can be reproduced by knitting the rmarkdown file *supplementary_material.Rmd* located in the folder *supplementary_material*.
+Figures were saved as vectorial files and edited in Inkscape for fine-tuning and fixing typos in the 'beach seine community' labels. The supplementary material can be reproduced by knitting the R Markdown file in `supplementary_material/supplementary_material.Rmd`.
+
+## Instructions
+
+Scripts contain relative paths to source functions and load data. Open an R session and set the working directory to the root of the project for better compatibility with relative paths.       
+
+**Setup:** Run the code in `R/setup.R` to install and load the required dependencies, custom functions, color palettes and ggplot themes.      
+
+**Data:** The formatted data set of mullet catch data and sea surface temperature (SST) data are in the files `data/dataMullet.csv` and `data/sst.csv`, respectively. Should you choose to download and prepare the SST data again, use the code in `R/obtain_sst.R`.      
+
+**Analyses:** All the code to reproduce the analyses are in `R/analyses.R`. One can also run the analyses and reproduce the supplementary material at once by knitting the R Markdown file in `supplementary_material/supplementary_material.Rmd`.      
+
+**Figures:** Use the code in `R/figure_correlations.R` to create Figure 2, `R/figure_bsts_cumulative_errors.R` to create Figure 3, and `R/figure_bsts.R` to create Figure 4.      
+
 
 ## System info
 
