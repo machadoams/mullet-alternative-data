@@ -1,5 +1,7 @@
 # README #
 
+"[![DOI](https://img.shields.io/badge/doi-10.1093/icesjms/fsab074-blue.svg)](https://doi.org/10.1093/icesjms/fsab074)"
+
 ## Author, maintainer and contact
 
 **Alexandre M. S. Machado**: alexandre.marcel@posgrad.ufsc.br       
@@ -12,7 +14,7 @@
 
 This repository includes the R scripts to reproduce the analyses and plot the figures of the manuscript:     
 
-Machado, AMS; Giehl, ELH; Fernandes, LP; Ingram, SN; Daura-Jorge, FG. 2021. Alternative data sources can fill the gaps in data-poor fisheries. ICES Journal of Marine Science.     
+Alexandre M S Machado, Eduardo L Hettwer Giehl, Luiza Pacheco Fernandes, Simon N Ingram, Fábio G Daura-Jorge, Alternative data sources can fill the gaps in data-poor fisheries, ICES Journal of Marine Science, Volume 78, Issue 5, August 2021, Pages 1663–1671, https://doi.org/10.1093/icesjms/fsab074     
 
 ### Note on figures and supplementary material
 Figures were saved as vectorial files and edited in Inkscape for fine-tuning and fixing typos in the 'beach seine community' labels. The supplementary material can be reproduced by knitting the R Markdown file in `supplementary_material/supplementary_material.Rmd`.
