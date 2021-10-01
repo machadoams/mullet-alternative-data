@@ -1,7 +1,5 @@
 # README #
 
-"[![DOI](https://img.shields.io/badge/doi-10.1093/icesjms/fsab074-blue.svg)](https://doi.org/10.1093/icesjms/fsab074)"
-
 ## Author, maintainer and contact
 
 **Alexandre M. S. Machado**: alexandre.marcel@posgrad.ufsc.br       
